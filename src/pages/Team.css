@@ -1,0 +1,272 @@
+/* ===== TEAM HERO ===== */
+.team-hero {
+    position: relative;
+    padding: 10rem 2rem 5rem;
+    background: var(--gradient-hero);
+    color: var(--text-on-dark);
+    overflow: hidden;
+}
+
+.team-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.team-hero__content {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s var(--ease-out-expo);
+}
+
+.team-hero__content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-hero__content .section-label::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.team-hero__content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.team-hero__content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 400px;
+}
+
+/* ===== TEAM GRID ===== */
+.team-grid-section {
+    padding: 5rem 0;
+    margin-top: -2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    perspective: 1200px;
+}
+
+/* FLIP CARD */
+.team-flip {
+    height: 340px;
+    cursor: pointer;
+    perspective: 1200px;
+}
+
+.team-flip__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s var(--ease-out-expo);
+    transform-style: preserve-3d;
+}
+
+.team-flip--flipped .team-flip__inner {
+    transform: rotateY(180deg);
+}
+
+.team-flip__front,
+.team-flip__back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Front */
+.team-flip__front {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.team-flip:hover .team-flip__front {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.team-flip--locked .team-flip__front {
+    border-color: var(--accent-bright);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.team-flip__hint {
+    opacity: 0.7 !important;
+}
+
+.team-flip--locked .team-flip__hint {
+    opacity: 1 !important;
+}
+
+.team-flip__avatar {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+.team-front-img {
+    border-radius: 25px;
+}
+
+.team-flip:hover .team-flip__avatar {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.team-flip__front h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.team-flip__role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+}
+
+.team-flip__dept {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.team-flip__hint {
+    margin-top: 1.25rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.team-flip:hover .team-flip__hint {
+    opacity: 1;
+}
+
+/* Back */
+.team-flip__back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.team-flip__back-photo {
+    height: 100%;
+    overflow: hidden;
+}
+
+.team-flip__back-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-flip__back-info {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-flip__back-info h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+    color: white;
+}
+
+.team-flip__back-role {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.75;
+    margin-bottom: 0.6rem;
+}
+
+.team-flip__back-intro {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+    overflow: hidden;
+}
+
+.team-flip__back-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.team-flip__back-links a {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s;
+}
+
+.team-flip__back-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .team-flip {
+        height: 320px;
+    }
+
+    .team-flip__back-photo {
+        height: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-flip {
+        height: 360px;
+    }
+}

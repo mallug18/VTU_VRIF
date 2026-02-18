@@ -1,0 +1,209 @@
+/* ===== INITIATIVES HERO ===== */
+.init-hero {
+    position: relative;
+    padding: 10rem 2rem 5rem;
+    background: var(--gradient-hero);
+    color: var(--text-on-dark);
+    overflow: hidden;
+}
+
+.init-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.init-hero__content {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s var(--ease-out-expo);
+}
+
+.init-hero__content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.init-hero__content .section-label::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.init-hero__content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.init-hero__content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 500px;
+}
+
+/* ===== STACKED INITIATIVES ===== */
+.init-stack-section {
+    padding: 5rem 0;
+    margin-top: -2rem;
+}
+
+.init-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Each stacked card */
+.init-stack-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s var(--ease-out-expo);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* First card rounded top */
+.init-stack-card:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+/* Last card rounded bottom */
+.init-stack-card:last-child {
+    border-radius: 0 0 20px 20px;
+}
+
+/* Remove double borders */
+.init-stack-card+.init-stack-card {
+    border-top: none;
+}
+
+.init-stack-card:hover {
+    background: var(--surface-alt);
+    transform: scale(1.01);
+    z-index: 2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Number / step indicator */
+.init-stack-card__number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 50px;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.init-stack-card:hover .init-stack-card__number {
+    color: var(--accent-bright);
+}
+
+/* Icon */
+.init-stack-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+.init-stack-card:hover .init-stack-card__icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Content */
+.init-stack-card__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.init-stack-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.init-stack-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.init-stack-card__tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    background: rgba(67, 97, 238, 0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
+
+.init-stack-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.init-stack-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-bright);
+    transition: gap 0.3s;
+}
+
+.init-stack-card__link:hover {
+    gap: 0.75rem;
+}
+
+/* Left accent bar */
+.init-stack-card__accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s var(--ease-out-expo);
+}
+
+.init-stack-card:hover .init-stack-card__accent {
+    transform: scaleY(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .init-stack-card {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .init-stack-card__number {
+        font-size: 1.5rem;
+        width: auto;
+    }
+}
