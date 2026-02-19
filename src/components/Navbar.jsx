@@ -29,7 +29,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${isOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__container">
         <NavLink to="/" className="navbar__logo">
-          <div><img src="../public/assets/logo.png" alt="vtu-logo" className="navbar-logo-img" /></div>
+          <div><img src="./src/assets/logo.png" alt="vtu-logo" className="navbar-logo-img" /></div>
           <span className="navbar__logo-text">Visvesvaraya Research & <br /> Innovation Foundation</span>
         </NavLink>
 

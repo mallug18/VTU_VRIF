@@ -9,10 +9,10 @@ import './Home.css';
 
 /* Hero carousel images */
 const heroImages = [
-    { url: '../public/assets/entrance.png', alt: 'Vtu-Entrance' },
-    { url: "../public/assets/whitehouse.png", alt: 'University Campus' },
-    { url: '../public/assets/meeting-hall.png', alt: 'Students Collaborating' },
-    { url: '../public/assets/bootcampvrif.png', alt: 'Innovation Workshop' },
+    { url: './src/assets/entrance.png', alt: 'Vtu-Entrance' },
+    { url: "./src/assets/whitehouse.png", alt: 'University Campus' },
+    { url: './src/assets/meeting-hall.png', alt: 'Students Collaborating' },
+    { url: './src/assets/bootcampvrif.png', alt: 'Innovation Workshop' },
 ];
 
 /* Chiefs data */
