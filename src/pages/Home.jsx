@@ -34,7 +34,7 @@ const chiefs = [
         name: 'Santosh Ittangi.',
         title: 'HEO, VTU-VRIF',
         speech: 'Research is not just about discovery — it\'s about transforming discoveries into real-world value. VRIF is committed to nurturing the spirit of inquiry among our youth, fostering an environment where brilliant minds can thrive and contribute to national development.',
-        photo: { santoshittangi2 },
+        photo: santoshittangi2,
         initials: 'SI',
     },
 ];
