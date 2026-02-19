@@ -6,6 +6,8 @@ import entrance from '../assets/entrance.png';
 import whitehouse from '../assets/whitehouse.png';
 import meetinghall from '../assets/meeting-hall.png';
 import bootcampvrif from '../assets/bootcampvrif.png';
+import santoshittangi2 from '../assets/santoshittangi2.png';
+import Dr_S_Vidyashankar from '../assets/Dr_S_Vidyashankar.png';
 import './Home.css';
 /* =========================================
    DATA
@@ -13,10 +15,10 @@ import './Home.css';
 
 /* Hero carousel images */
 const heroImages = [
-    { url: { entrance }, alt: 'Vtu-Entrance' },
-    { url: { whitehouse }, alt: 'University Campus' },
-    { url: { meetinghall }, alt: 'Students Collaborating' },
-    { url: { bootcampvrif }, alt: 'Innovation Workshop' },
+    { url: entrance, alt: 'Vtu-Entrance' },
+    { url: whitehouse, alt: 'University Campus' },
+    { url: meetinghall, alt: 'Students Collaborating' },
+    { url: bootcampvrif, alt: 'Innovation Workshop' },
 ];
 
 /* Chiefs data */
@@ -25,14 +27,14 @@ const chiefs = [
         name: 'Dr. S. Vidyashankar',
         title: 'Vice Chancellor, VTU',
         speech: 'Innovation is the bridge between knowledge and impact. VTU-VRIF empowers students to become the architects of tomorrow\'s solutions. Our commitment is to build a world-class research ecosystem that transforms academic potential into groundbreaking discoveries.',
-        photo: './src/assets/Dr_S_Vidyashankar.png',
+        photo: Dr_S_Vidyashankar,
         initials: 'SV',
     },
     {
         name: 'Santosh Ittangi.',
         title: 'HEO, VTU-VRIF',
         speech: 'Research is not just about discovery — it\'s about transforming discoveries into real-world value. VRIF is committed to nurturing the spirit of inquiry among our youth, fostering an environment where brilliant minds can thrive and contribute to national development.',
-        photo: './src/assets/santoshittangi2.png',
+        photo: { santoshittangi2 },
         initials: 'SI',
     },
 ];
