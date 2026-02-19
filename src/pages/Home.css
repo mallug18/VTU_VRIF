@@ -168,6 +168,10 @@
     transition: all 0.8s 0.8s;
 }
 
+.btn-secondary {
+    color: aliceblue;
+}
+
 .hero__content.visible .hero__actions {
     opacity: 1;
     transform: translateY(0);
@@ -175,7 +179,7 @@
 
 .hero__scroll-hint {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
@@ -186,7 +190,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    animation: bounce 2s infinite;
+    animation: bounce 1s infinite;
 }
 
 /* STATS */
@@ -534,7 +538,7 @@
 @media (max-width: 900px) {
     .chief-pop-wrapper {
         width: 100%;
-        max-width: 320px;
+        max-width: 380px;
         height: auto;
         margin-bottom: 2rem;
     }
@@ -547,9 +551,12 @@
         position: relative;
         width: 100%;
         height: auto;
+        /* Allow auto height to fit content */
         flex-direction: column;
         top: 0;
+        padding-bottom: -10px;
         margin-bottom: 1rem;
+        background: var(--surface);
     }
 
     .pop-right .chief-pop-card,
@@ -563,44 +570,168 @@
         width: 100%;
         height: auto;
         top: 0;
+        left: 0;
     }
 
+    /* On mobile, we might want to just show the content always or simplify the expand */
     .chief-pop__details {
         width: 100% !important;
         flex-direction: column;
         height: 0;
         transition: height 0.4s;
+        border-left: none;
+        border-top: 1px solid var(--border-light);
     }
 
     .chief-pop-wrapper.active .chief-pop__details {
         height: auto;
+        padding-bottom: 1rem;
     }
 
-    .chief-pop__photo {
+    .chief-pop__front {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Adjust main image for mobile */
+    .chief-pop__main-image {
         width: 100%;
-        height: 180px;
+        height: 240px;
+        /* Larger image for mobile card */
+        margin-bottom: 1rem;
     }
 
     .chiefs__grid {
         flex-direction: column;
         align-items: center;
+        gap: 2rem;
+    }
+
+    .chief-pop__speech {
+        padding: 1.5rem;
+    }
+
+    .chief-pop__speech blockquote {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 6rem;
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+        min-height: auto;
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero__actions .btn-primary,
+    .hero__actions .btn-secondary {
+        width: 100%;
+        justify-content: center;
     }
 
     .stats__container {
         grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 
     .mission__pillars {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .hero-carousel__btn {
         display: none;
     }
+}
+
+@media (max-width: 480px) {
+    .stats__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   3D MISSION CAROUSEL CSS
+   ============================================ */
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    --outer-r: 24px;
+    --p-distance: 12px;
+}
+
+.carousel-track {
+    display: flex;
+}
+
+.carousel-item {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    /* Updated to match your site's theme */
+    border: 1px solid var(--border-light);
+    border-radius: calc(var(--outer-r) - var(--p-distance));
+    background-color: var(--surface);
+
+    overflow: hidden;
+    cursor: grab;
+    /* Added a subtle shadow so the 3D tilt stands out */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-item:active {
+    cursor: grabbing;
+}
+
+/* Hide the default carousel layout classes since we injected your .mission__pillar HTML */
+.carousel-item-header,
+.carousel-item-content {
+    display: none;
+}
+
+/* Carousel Dots (Indicators) */
+.carousel-indicators-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.carousel-indicators {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.carousel-indicator {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 150ms;
+}
+
+/* Updated dot colors to match your dark theme */
+.carousel-indicator.active {
+    background-color: white;
+}
+
+.carousel-indicator.inactive {
+    background-color: rgba(255, 255, 255, 0.2);
 }

@@ -25,7 +25,7 @@ const initiatives = [
         tag: 'Ongoing',
     },
     {
-        title: 'Student Innovation Lab',
+        title: 'SamShoDhana',
         desc: 'Providing cutting-edge labs and makerspaces for students to prototype, build, and test innovative products.',
         icon: <Rocket size={24} />,
         gradient: 'linear-gradient(135deg, #f4a261, #e76f51)',
@@ -50,6 +50,8 @@ const initiatives = [
 function Initiatives() {
     const [headerRef, headerVisible] = useScrollReveal(0.1);
     const [stackRef, stackVisible] = useScrollReveal(0.05);
+
+
 
     return (
         <div className="initiatives-page">

@@ -249,22 +249,37 @@
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 768px) {
+    .contact-hero {
+        padding-top: 8rem;
+    }
+
     .contact-layout {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
     .contact-info {
-        flex-direction: row;
-        overflow-x: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .contact-info-card {
-        min-width: 240px;
-        flex-shrink: 0;
+        min-width: 0;
+        /* Remove min-width to fit grid */
     }
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .contact-form-card {
+        padding: 1.5rem;
+    }
+
+    .contact-form__header h2 {
+        font-size: 1.5rem;
     }
 }

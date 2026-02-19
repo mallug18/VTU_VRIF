@@ -246,7 +246,22 @@
 }
 
 /* Responsive */
+/* Responsive */
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
+    .team-hero {
+        padding-top: 8rem;
+    }
+
+    .team-grid-section {
+        padding: 3rem 0;
+    }
+
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -257,16 +272,100 @@
     }
 
     .team-flip__back-photo {
-        height: 40%;
+        height: 35%;
+    }
+
+    /* On mobile, tapping reveals the back, so hint updates */
+    .team-flip__hint {
+        content: "Tap for info";
     }
 }
 
 @media (max-width: 480px) {
     .team-grid {
         grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .team-flip {
-        height: 360px;
+        height: 380px;
+    }
+}
+
+/* ===============================
+   PREMIUM AWWWARDS DOODLE
+================================ */
+
+.team-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-hero__doodle {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    width: 140px;
+    color: rgba(255, 255, 255, 0.07);
+    z-index: 1;
+    pointer-events: all;
+    transition: transform 0.15s ease-out;
+}
+
+
+/* Glow */
+.team-hero__doodle::after {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+    z-index: -1;
+    filter: blur(40px);
+    opacity: 0.5;
+}
+
+.team-hero__doodle svg {
+    width: 100%;
+}
+
+.team-hero__doodle svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Organic floating */
+@keyframes floatPremium {
+    0% {
+        transform: translateY(-50%) translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-50%) translateY(-15px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-50%) translateY(-25px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-50%) translateY(-10px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(-50%) translateY(0px) rotate(0deg);
+    }
+}
+
+/* Subtle parallax on scroll */
+.team-hero__doodle {
+    will-change: transform;
+}
+
+@media (max-width: 768px) {
+    .team-hero__doodle {
+        width: 90px;
+        right: 4%;
+        opacity: 0.5;
     }
 }

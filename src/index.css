@@ -45,6 +45,20 @@
   --transition-slow: 0.8s var(--ease-out-expo);
 }
 
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+}
+
 /* ========== Reset & Base ========== */
 *,
 *::before,

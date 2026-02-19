@@ -195,15 +195,37 @@
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 768px) {
+    .init-hero {
+        padding-top: 8rem;
+    }
+
     .init-stack-card {
         padding: 1.5rem;
         flex-direction: column;
         gap: 1rem;
+        align-items: flex-start;
     }
 
     .init-stack-card__number {
         font-size: 1.5rem;
         width: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .init-stack-card__header {
+        flex-wrap: wrap;
+    }
+
+    .init-stack-card:hover {
+        transform: none;
+        /* Disable shift on mobile to prevent sticky hover issues */
+        z-index: 1;
+    }
+
+    .init-stack-card:hover .init-stack-card__accent {
+        transform: scaleY(1);
+        /* Keep the accent bar transition */
     }
 }
