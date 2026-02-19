@@ -31,6 +31,7 @@ const initiatives = [
         icon: <Rocket size={24} />,
         gradient: 'linear-gradient(135deg, #f4a261, #e76f51)',
         tag: 'New',
+        link: "https://samshodhana.netlify.app/"
     },
     {
         title: 'Research Fellowship Program',
@@ -101,7 +102,7 @@ function Initiatives() {
                                         </p>
 
                                         {/* RESTORED BLUE LINK */}
-                                        <a href="#" className="init-stack-card__link">
+                                        <a href={item.link} className="init-stack-card__link">
                                             Learn more →
                                         </a>
                                     </div>
