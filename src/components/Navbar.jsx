@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 import './Navbar.css';
 
 function Navbar() {
@@ -29,7 +30,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${isOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__container">
         <NavLink to="/" className="navbar__logo">
-          <div><img src="./src/assets/logo.png" alt="vtu-logo" className="navbar-logo-img" /></div>
+          <div><img src={logo} alt="vtu-logo" className="navbar-logo-img" /></div>
           <span className="navbar__logo-text">Visvesvaraya Research & <br /> Innovation Foundation</span>
         </NavLink>
 
