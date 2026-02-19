@@ -1,0 +1,14 @@
+.scroll-stack-wrapper {
+    position: relative;
+    padding: 20vh 20vh;
+}
+
+.scroll-stack-card {
+    position: sticky;
+    top: 20vh;
+    margin-bottom: 100px;
+    transform-origin: top center;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+    width: 100%;
+}

@@ -1,6 +1,7 @@
 import { ArrowRight, Rocket, Brain, Target, Lightbulb, GraduationCap, Globe } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useAnimations';
 import './Initiatives.css';
+import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
 
 const initiatives = [
     {
@@ -70,32 +71,49 @@ function Initiatives() {
             {/* Stacked Initiatives */}
             <section className="init-stack-section">
                 <div className="container">
-                    <div
-                        className={`init-stack stagger-children ${stackVisible ? 'visible' : ''}`}
-                        ref={stackRef}
-                    >
+                    <ScrollStack>
                         {initiatives.map((item, i) => (
-                            <div key={i} className="init-stack-card">
-                                <span className="init-stack-card__number">
-                                    {String(i + 1).padStart(2, '0')}
-                                </span>
-                                <div className="init-stack-card__icon" style={{ background: item.gradient }}>
-                                    {item.icon}
-                                </div>
-                                <div className="init-stack-card__body">
-                                    <div className="init-stack-card__header">
-                                        <h3 className="init-stack-card__title">{item.title}</h3>
-                                        <span className="init-stack-card__tag">{item.tag}</span>
+                            <ScrollStackItem key={i}>
+                                <div className="init-stack-card">
+                                    <span className="init-stack-card__number">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+
+                                    <div
+                                        className="init-stack-card__icon"
+                                        style={{ background: item.gradient }}
+                                    >
+                                        {item.icon}
                                     </div>
-                                    <p className="init-stack-card__desc">{item.desc}</p>
-                                    <a href="#" className="init-stack-card__link">
-                                        Learn more <ArrowRight size={14} />
-                                    </a>
+
+                                    <div className="init-stack-card__body">
+                                        <div className="init-stack-card__header">
+                                            <h3 className="init-stack-card__title">
+                                                {item.title}
+                                            </h3>
+                                            <span className="init-stack-card__tag">
+                                                {item.tag}
+                                            </span>
+                                        </div>
+
+                                        <p className="init-stack-card__desc">
+                                            {item.desc}
+                                        </p>
+
+                                        {/* RESTORED BLUE LINK */}
+                                        <a href="#" className="init-stack-card__link">
+                                            Learn more →
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        className="init-stack-card__accent"
+                                        style={{ background: item.gradient }}
+                                    />
                                 </div>
-                                <div className="init-stack-card__accent" style={{ background: item.gradient }} />
-                            </div>
+                            </ScrollStackItem>
                         ))}
-                    </div>
+                    </ScrollStack>
                 </div>
             </section>
         </div>
