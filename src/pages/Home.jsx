@@ -2,6 +2,10 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'motion/react'; // Added motion imports
 import { ArrowRight, ArrowDown, Award, BookOpen, Users, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollReveal, useCountUp } from '../hooks/useAnimations';
+import entrance from '../assets/entrance.png';
+import whitehouse from '../assets/whitehouse.png';
+import meetinghall from '../assets/meeting-hall.png';
+import bootcampvrif from '../assets/bootcampvrif.png';
 import './Home.css';
 /* =========================================
    DATA
@@ -9,10 +13,10 @@ import './Home.css';
 
 /* Hero carousel images */
 const heroImages = [
-    { url: './src/assets/entrance.png', alt: 'Vtu-Entrance' },
-    { url: "./src/assets/whitehouse.png", alt: 'University Campus' },
-    { url: './src/assets/meeting-hall.png', alt: 'Students Collaborating' },
-    { url: './src/assets/bootcampvrif.png', alt: 'Innovation Workshop' },
+    { url: { entrance }, alt: 'Vtu-Entrance' },
+    { url: { whitehouse }, alt: 'University Campus' },
+    { url: { meetinghall }, alt: 'Students Collaborating' },
+    { url: { bootcampvrif }, alt: 'Innovation Workshop' },
 ];
 
 /* Chiefs data */
