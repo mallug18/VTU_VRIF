@@ -27,7 +27,7 @@ function Contact() {
             title: 'Visit Us',
             lines: ['VTU Campus, Machhe', 'Belagavi, Karnataka 590018'],
             gradient: 'linear-gradient(135deg, #4361ee, #4cc9f0)',
-            mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15359.215264627494!2d74.4746671!3d15.7614066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf61765c69781b%3A0xa61fc6a19f56e01!2sVisvesvaraya%20Technological%20University!5e0!3m2!1sen!2sin!4v1724490000000!5m2!1sen!2sin"
+            mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15358.015129750704!2d74.45265374132876!3d15.777368407184277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf6f7d3da7f437%3A0x64791b475c2f2939!2sVisvesvaraya%20Technological%20University%2C%20Machhe%2C%20Belagavi%2C%20Karnataka%20590018!5e0!3m2!1sen!2sin!4v1771876783042!5m2!1sen!2sin"
         },
         {
             icon: <Phone size={20} />,
