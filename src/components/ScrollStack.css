@@ -12,3 +12,15 @@
     will-change: transform;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .scroll-stack-wrapper {
+        padding: 5vh 1.5rem;
+        /* Much smaller horizontal padding on mobile */
+    }
+
+    .scroll-stack-card {
+        top: 10vh;
+        /* Make sure it doesn't get covered by navbar */
+    }
+}

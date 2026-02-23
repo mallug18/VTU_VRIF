@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, MapPin, Phone, Send, CheckCircle, ArrowUpRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useAnimations';
 import './Contact.css';
+import { link } from 'framer-motion/client';
 
 function Contact() {
     const [submitted, setSubmitted] = useState(false);
@@ -26,6 +27,7 @@ function Contact() {
             title: 'Visit Us',
             lines: ['VTU Campus, Machhe', 'Belagavi, Karnataka 590018'],
             gradient: 'linear-gradient(135deg, #4361ee, #4cc9f0)',
+            mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15359.215264627494!2d74.4746671!3d15.7614066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf61765c69781b%3A0xa61fc6a19f56e01!2sVisvesvaraya%20Technological%20University!5e0!3m2!1sen!2sin!4v1724490000000!5m2!1sen!2sin"
         },
         {
             icon: <Phone size={20} />,
@@ -71,6 +73,20 @@ function Contact() {
                                         {info.lines.map((line, j) => (
                                             <p key={j}>{line}</p>
                                         ))}
+                                        {info.mapEmbed && (
+                                            <div className="contact-info-card__map">
+                                                <iframe
+                                                    src={info.mapEmbed}
+                                                    width="100%"
+                                                    height="180"
+                                                    style={{ border: 0, borderRadius: '12px', marginTop: '1rem' }}
+                                                    allowFullScreen=""
+                                                    loading="lazy"
+                                                    referrerPolicy="no-referrer-when-downgrade"
+                                                    title="Location Map"
+                                                ></iframe>
+                                            </div>
+                                        )}
                                     </div>
                                     <ArrowUpRight size={16} className="contact-info-card__arrow" />
                                 </div>

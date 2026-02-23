@@ -56,6 +56,8 @@
     flex-direction: column;
     gap: 0;
     max-width: 800px;
+    width: 100%;
+    /* Ensure stack container takes full available width but respects max-width */
     margin: 0 auto;
 }
 
@@ -227,5 +229,24 @@
     .init-stack-card:hover .init-stack-card__accent {
         transform: scaleY(1);
         /* Keep the accent bar transition */
+    }
+}
+
+@media (max-width: 480px) {
+    .init-hero__content h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .init-stack-card {
+        padding: 1.25rem 1rem;
+        /* Adjust padding for smaller screens like iPhone XS */
+        width: 100%;
+        /* Force width to strictly respect container */
+        box-sizing: border-box;
+        /* Include padding in width calculation */
+    }
+
+    .init-stack-card__number {
+        font-size: 1.25rem;
     }
 }

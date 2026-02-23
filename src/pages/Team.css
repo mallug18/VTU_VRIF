@@ -249,7 +249,7 @@
 /* Responsive */
 @media (max-width: 900px) {
     .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 }
 
@@ -284,12 +284,16 @@
 @media (max-width: 480px) {
     .team-grid {
         grid-template-columns: 1fr;
-        max-width: 320px;
+        max-width: 100%;
         margin: 0 auto;
     }
 
     .team-flip {
-        height: 380px;
+        height: 340px;
+    }
+
+    .team-flip__front {
+        padding: 1.5rem 1rem;
     }
 }
 
