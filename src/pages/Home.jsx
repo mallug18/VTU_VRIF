@@ -25,14 +25,14 @@ const heroImages = [
 const chiefs = [
     {
         name: 'Dr. S. Vidyashankar',
-        title: 'Vice Chancellor, VTU',
+        title: 'Vice Chancellor, VTU Belagavi',
         speech: 'Innovation is the bridge between knowledge and impact. VTU-VRIF empowers students to become the architects of tomorrow\'s solutions. Our commitment is to build a world-class research ecosystem that transforms academic potential into groundbreaking discoveries.',
         photo: Dr_S_Vidyashankar,
         initials: 'SV',
     },
     {
         name: 'Santosh Ittangi.',
-        title: 'HEO, VTU-VRIF',
+        title: 'HEO, VTU-VRIF Belagavi',
         speech: 'Research is not just about discovery — it\'s about transforming discoveries into real-world value. VRIF is committed to nurturing the spirit of inquiry among our youth, fostering an environment where brilliant minds can thrive and contribute to national development.',
         photo: santoshittangi2,
         initials: 'SI',
@@ -435,6 +435,9 @@ function Home() {
                         <span className="hero__title-line">Visvesvaraya Research &</span>
                         <span className="hero__title-line hero__title-accent">Innovation Foundation</span>
                     </h1>
+                    <h3>
+                        <span className="hero__title-line location">Belagavi</span>
+                    </h3>
                     <p className="hero__subtitle">Pioneering the future of technology education through cutting-edge research and innovation.</p>
                     <div className="hero__actions">
                         <a href="/initiatives" className="btn-primary">Explore Our Work <ArrowRight size={18} /></a>

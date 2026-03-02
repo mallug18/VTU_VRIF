@@ -123,7 +123,7 @@
 }
 
 .navbar__link:hover {
-  color: white;
+  color: rgb(35, 93, 168);
 }
 
 .navbar--scrolled .navbar__link {
@@ -151,7 +151,7 @@
   transform: translateX(-50%) scaleX(0);
   width: 20px;
   height: 2px;
-  background: white;
+  background: rgb(12, 44, 157);
   /* White indicator initially */
   border-radius: 1px;
   transition: transform 0.3s var(--ease-out-expo), background 0.3s;
@@ -238,7 +238,6 @@
     pointer-events: none;
     transition: opacity 0.4s var(--ease-out-expo);
     z-index: 40;
-    /* Above everything but toggle/logo */
     padding: 2rem;
   }
 
@@ -259,7 +258,6 @@
     font-weight: 700;
     padding: 0.5rem;
     color: var(--text-primary) !important;
-    /* Forces dark text on white menu */
   }
 
   .navbar__link:hover,

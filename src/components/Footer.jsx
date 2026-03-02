@@ -1,5 +1,6 @@
-import { ArrowUpRight, Linkedin, Twitter, Github, Mail } from 'lucide-react';
+import { ArrowUpRight, Linkedin, Instagram, Facebook, Github, Mail } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import './Footer.css';
 
 function Footer() {
@@ -11,7 +12,7 @@ function Footer() {
                 <div className="footer__top">
                     <div className="footer__brand">
                         <div className="footer__logo">
-                            <div className="footer__logo-mark">V</div>
+                            <img src={logo} alt="VTU-VRIF Logo" className="navbar-logo-img" />
                             <span className="footer__logo-text">VTU-VRIF</span>
                         </div>
                         <p className="footer__tagline">
@@ -44,16 +45,16 @@ function Footer() {
                     <div className="footer__connect">
                         <h4 className="footer__nav-title">Stay Connected</h4>
                         <div className="footer__socials">
-                            <a href="#" aria-label="LinkedIn" className="footer__social-link">
+                            <a href="https://www.linkedin.com/company/vtu-vrif/" aria-label="LinkedIn" className="footer__social-link">
                                 <Linkedin size={18} />
                             </a>
-                            <a href="#" aria-label="Twitter" className="footer__social-link">
-                                <Twitter size={18} />
+                            <a href="https://www.facebook.com/VTUVRIF" aria-label="Facebook" className="footer__social-link">
+                                <Facebook size={18} />
                             </a>
-                            <a href="#" aria-label="GitHub" className="footer__social-link">
-                                <Github size={18} />
+                            <a href="https://www.instagram.com/vtuvrif?igsh=MWsxNWxnY3cxMHF1YQ==" aria-label="Instagram" className="footer__social-link">
+                                <Instagram size={18} />
                             </a>
-                            <a href="#" aria-label="Email" className="footer__social-link">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vrif@vtu.ac.in" aria-label="Email" className="footer__social-link">
                                 <Mail size={18} />
                             </a>
                         </div>
